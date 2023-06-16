@@ -37,6 +37,8 @@ function cambiarDeModoDeColor() {
 const alertaForm = document.querySelector("#alerta-form");
 const alertaInput = document.querySelector("#alerta-input");
 
-alertaInput.addEventListener("input", () => {
-  console.log(alertaInput.value);
-})
+alertaForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert(alertaInput.value);
+  alertaForm.reset();
+});
