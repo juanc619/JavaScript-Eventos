@@ -31,3 +31,12 @@ function cambiarDeModoDeColor() {
     colorModeButton.innerText = "Cambiar a Dark Mode";
   }
 }
+
+// Eventos de Fornularios
+
+const alertaForm = document.querySelector("#alerta-form");
+const alertaInput = document.querySelector("#alerta-input");
+
+alertaInput.addEventListener("input", () => {
+  console.log(alertaInput.value);
+})
