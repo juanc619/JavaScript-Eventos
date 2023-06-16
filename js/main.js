@@ -34,6 +34,7 @@ function cambiarDeModoDeColor() {
 
 // Eventos de Fornularios
 
+// Mostrar input en alerta
 const alertaForm = document.querySelector("#alerta-form");
 const alertaInput = document.querySelector("#alerta-input");
 
@@ -42,3 +43,35 @@ alertaForm.addEventListener("submit", (e) => {
   alert(alertaInput.value);
   alertaForm.reset();
 });
+
+// Mostrar un texto abajo de un input
+const abajoInput = document.querySelector("#abajo-input");
+const abajo = document.querySelector("#abajo");
+
+abajoInput.addEventListener("input" , () => {
+  abajo.innerText = abajoInput.value;
+})
+
+// Agregar items de una lista
+
+const agregarForm = document.querySelector("#agregar-form");
+const agregarInput = document.querySelector("#agregar-input");
+const agregar = document.querySelector("#agregar");
+
+agregarForm.addEventListener("submit", agregarItems);
+
+function agregarItems(e) {
+  e.preventDefault();
+
+  if (agregarInput.value != "") {
+    let item = document.createElement("li");
+    item.innerText = agregarInput.value;
+
+    agregar.append(item);
+  } else {
+    alert("input vacio!");
+  }
+
+  agregarInput.focus();
+  agregarForm.reset();
+}
