@@ -12,7 +12,7 @@ function mostrarAlerta() {
 
 // Mostrar mensaje en la consola -- escribir una funcion anonima
 const consola = document.querySelector("#consola");
-consola.addEventListener("click", () => {
+consola.addEventListener("mouseout", () => {
     console.log("Hola mundo");
 })
 
@@ -20,14 +20,14 @@ consola.addEventListener("click", () => {
 const colorModeButton = document.querySelector("#color-mode");
 const body = document.body;
 
-colorModeButton.addEventListener("click", cambiarModoColor);
+colorModeButton.addEventListener("click", cambiarDeModoDeColor);
 
-function cambiarModoColor() {
-    body.classList.toggle("dark-mode");
+function cambiarDeModoDeColor() {
+  body.classList.toggle("dark-mode");
 
-    if (body.classList.contains("dark-mode")) {
-        colorModeButton.innerText = "Cambiar a Light Mode";
-    } else {
-        colorModeButton.innerText = "Cambiar a Dark Mode";
-    }
+  if(body.classList.contains("dark-mode")) {
+    colorModeButton.innerText = "Cambiar a Light Mode";
+  } else {
+    colorModeButton.innerText = "Cambiar a Dark Mode";
+  }
 }
